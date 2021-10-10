@@ -1,7 +1,6 @@
 {
-	"private": true,
 	"name": "create-vike-app",
-	"version": "0.1.0-next.0",
+	"version": "0.1.0",
 	"description": "Removes TypeScript type annotations but keeps the formatting",
 	"main": "dist/index.js",
 	"bin": "create-vike-app.js",
@@ -15,7 +14,8 @@
 		"format": "prettier . --write"
 	},
 	"files": [
-		"dist/**/*"
+		"dist/**/*",
+		"input-files/**/*"
 	],
 	"dependencies": {
 		"commander": "^8.2.0",
