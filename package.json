@@ -1,6 +1,6 @@
 {
-	"name": "create-vike-app",
-	"version": "0.1.0",
+	"name": "create-vike",
+	"version": "0.0.1",
 	"description": "Removes TypeScript type annotations but keeps the formatting",
 	"main": "dist/index.js",
 	"bin": "create-vike-app.js",
