@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/jest': ^27.0.2
+  '@types/lodash.merge': ^4.6.6
   '@types/rimraf': ^3.0.2
   '@types/walk': ^2.3.1
   '@typescript-eslint/eslint-plugin': ^4.33.0
@@ -20,6 +21,7 @@ specifiers:
   eslint-plugin-ssr-friendly: ^1.0.5
   fast-glob: ^3.2.7
   jest: ^27.2.5
+  lodash.merge: ^4.6.2
   npm-run-all: ^4.1.5
   prettier: ^2.4.1
   rimraf: ^3.0.2
@@ -28,8 +30,10 @@ specifiers:
   walk: ^2.3.15
 
 dependencies:
+  '@types/lodash.merge': 4.6.6
   commander: 8.2.0
   detype: 0.3.2
+  lodash.merge: 4.6.2
   prettier: 2.4.1
   tosource: 2.0.0-alpha.3
   walk: 2.3.15
@@ -836,6 +840,16 @@ packages:
   /@types/json5/0.0.29:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
     dev: true
+
+  /@types/lodash.merge/4.6.6:
+    resolution: {integrity: sha512-IB90krzMf7YpfgP3u/EvZEdXVvm4e3gJbUvh5ieuI+o+XqiNEt6fCzqNRaiLlPVScLI59RxIGZMQ3+Ko/DJ8vQ==}
+    dependencies:
+      '@types/lodash': 4.14.175
+    dev: false
+
+  /@types/lodash/4.14.175:
+    resolution: {integrity: sha512-XmdEOrKQ8a1Y/yxQFOMbC47G/V2VDO1GvMRnl4O75M4GW/abC5tnfzadQYkqEveqRM1dEJGFFegfPNA2vvx2iw==}
+    dev: false
 
   /@types/minimatch/3.0.5:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
@@ -3682,7 +3696,6 @@ packages:
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-    dev: true
 
   /lodash.truncate/4.4.2:
     resolution: {integrity: sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=}
