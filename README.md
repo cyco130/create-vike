@@ -4,7 +4,7 @@ Generates Vike application boilerplate
 
 ## Usage
 ```
-create-vike-app [options] <output-dir>
+create-vike [options] <output-dir>
 
 Arguments:
   output-dir                   Output directory
