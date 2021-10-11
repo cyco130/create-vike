@@ -80,13 +80,7 @@ export abstract class ConfigGenerator {
 export type TsConfig = typeof TS_CONFIG;
 
 export interface PackageJson {
-	scripts: {
-		dev: string;
-		prod: string;
-		build: string;
-		server: string;
-		"server:prod": string;
-	};
+	scripts: Record<string, string>;
 	dependencies: string[];
 }
 
@@ -133,3 +127,56 @@ const TS_PACKAGE_JSON_OVERRIDES = {
 	},
 	dependencies: ["@types/express", "@types/node", "ts-node", "typescript"],
 };
+
+// generates a list of possibilities for specificityKeys
+export function possibilities(options: SpecificityOptions): string[] {
+	return Object.keys(options).reduce((acc, curr) => {
+		const k = curr as keyof SpecificityOptions;
+		const option = options[k];
+		// TODO implement this
+		return acc;
+	}, []);
+}
+
+// least specific to most specific, manual array for now
+export const specificityKeys: SpecificityKey[] = [
+	"js",
+	"ts",
+	"react",
+	"vue",
+	"react-js",
+	"react-ts",
+	"vue-js",
+	"vue-ts",
+];
+
+export function applyTransforms<T>({
+	data,
+	transforms,
+	options,
+}: {
+	data: T;
+	options: SpecificityOptions;
+	transforms: TransformRecords<T>;
+}): T {
+	const { language, framework } = options;
+	// least specific to most specific order because it will be overwritten by more
+	// speficic transform
+	return specificityKeys
+		.filter((key) => {
+			// language or framework specific or both
+			return (
+				language === key ||
+				framework === key ||
+				(key.includes(language) && key.includes(framework))
+			);
+		})
+		.reduce((acc, key) => {
+			if (Object.keys(transforms).includes(key)) {
+				return transforms[key]!(acc);
+			}
+			return acc;
+		}, data);
+
+	// generate a set of keys from specificity object
+}
