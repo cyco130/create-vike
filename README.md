@@ -17,12 +17,13 @@ Options:
 ```
 
 ## How it works
-- Copies files from `input-files/common`, `input-files/react`, and `input-files/vue` renaming and transforming them as necessary.
-- Generates plain JS files from the TS files via `detype`.
+- Generates TypeScript and JavaScript files from the templates in `input-files` via `detype`.
+- Copies files from `files/<language>/<framework>` where:
+  - `<language>` is `shared`, `ts`, or `js`
+  - `<framework>` is `common`, `react`, or `vue`
 - Configuration files (`package.json`, `tsconfig.json`, and `vite.config.{js,ts}`) are generated programmatically.
 - Boilerplate package versions are kept in `src/config-generators/package-versions.json`.
 
 ## Roadmap
 - Create an interactive frontend
-- Apply TS > JS transform in build-time to speed up generation
 - Resolve user's default prettier config if any and use it instead of the default

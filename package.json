@@ -5,21 +5,21 @@
 	"main": "dist/index.js",
 	"bin": "create-vike.js",
 	"scripts": {
-		"prepublishOnly": "pnpm build",
+		"prepack": "pnpm generate-files && pnpm build",
 		"build": "node build.mjs",
-		"check": "run-p lint typecheck test",
-		"test": "jest",
-		"typecheck": "tsc -p tsconfig.json --noEmit",
-		"lint": "eslint src --max-warnings 0",
+		"generate-files": "./generate-files",
+		"test": "run-p 'test:*'",
+		"test:unit": "jest",
+		"test:typecheck": "tsc -p tsconfig.json --noEmit",
+		"test:lint": "eslint src --max-warnings 0",
 		"format": "prettier . --write"
 	},
 	"files": [
 		"dist/**/*",
-		"input-files/**/*"
+		"files/**/*"
 	],
 	"dependencies": {
 		"commander": "^8.2.0",
-		"detype": "^0.3.2",
 		"prettier": "^2.4.1",
 		"walk": "^2.3.15"
 	},
@@ -29,6 +29,7 @@
 		"@types/walk": "^2.3.1",
 		"@typescript-eslint/eslint-plugin": "^4.33.0",
 		"@typescript-eslint/parser": "^4.33.0",
+		"detype": "^0.4.1",
 		"esbuild": "^0.13.4",
 		"esbuild-jest": "^0.5.0",
 		"esbuild-node-externals": "^1.3.0",

@@ -1,0 +1,14 @@
+rm -rf files
+
+mkdir -p files/shared
+cd input-files
+shared_files=`find . -type f -regextype posix-extended -not -regex '.*\.(tsx?|vue)'`
+cp -a --parents -- $shared_files ../files/shared/
+cd ..
+
+detype input-files files/js
+rm files/js/react/renderer/types.js
+rm files/js/vue/renderer/types.js
+
+detype -m input-files files/ts
+cp input-files/vue/vue.d.ts files/ts/vue/vue.d.ts
