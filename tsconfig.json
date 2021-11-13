@@ -9,5 +9,5 @@
 		"target": "es6",
 		"types": ["node", "jest"]
 	},
-	"include": ["src/**/*.ts"]
+	"include": ["src/**/*.ts", "src/**/*.js"]
 }
