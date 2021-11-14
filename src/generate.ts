@@ -179,12 +179,11 @@ export async function generate({
 		}
 
 		if (createInitialCommit) {
-			console.log(
-				`Initialized Vike ${
+			console.log("Creating initial commit");
+			if (createInitialCommit === true)
+				createInitialCommit = `Initialized Vike ${
 					typescript ? "TypeScript" : "vanilla JavaScript"
-				} boilerplate for ${react ? "React" : "Vue"}`,
-			);
-			if (createInitialCommit === true) createInitialCommit = "Initial commit";
+				} boilerplate for ${react ? "React" : "Vue"}`;
 			await runCommand("git", "add", ".");
 			await runCommand("git", "commit", "-m", createInitialCommit);
 		}

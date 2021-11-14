@@ -1,6 +1,6 @@
 {
 	"name": "create-vike",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Generates Vike application boilerplate",
 	"main": "dist/index.js",
 	"bin": "create-vike.js",
