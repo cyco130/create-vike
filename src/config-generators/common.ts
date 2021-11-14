@@ -13,7 +13,7 @@ export abstract class ConfigGenerator {
 		return JSON.stringify(config, undefined, 2);
 	}
 
-	public generatePackageJson(): string {
+	public generatePackageJson() {
 		const pkg = deepClone(PACKAGE_JSON);
 
 		if (this.language === "ts") {
@@ -40,7 +40,7 @@ export abstract class ConfigGenerator {
 			),
 		};
 
-		return JSON.stringify(output, undefined, 2);
+		return output;
 	}
 
 	public generateViteConfig(): string {

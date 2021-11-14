@@ -18,12 +18,13 @@ Options:
 
 ## How it works
 - Generates TypeScript and JavaScript files from the templates in `input-files` via `detype`.
-- Copies files from `files/<language>/<framework>` where:
+- Copies files from `files/<language>/<feature>` where:
   - `<language>` is `shared`, `ts`, or `js`
-  - `<framework>` is `common`, `react`, or `vue`
+  - `<feature>` is any combination of `vike` (default), `react`, `vue`, and `client-router` combined with a plus sign
 - Configuration files (`package.json`, `tsconfig.json`, and `vite.config.{js,ts}`) are generated programmatically.
-- Boilerplate package versions are kept in `src/config-generators/package-versions.json`.
+- Boilerplate package versions are kept in `src/config-generators/package-versions.json`, `check-deps.mjs` can be used to review package updates.
 
-## Roadmap
+## TODO
+- Add integration tests
 - Create an interactive frontend
 - Resolve user's default prettier config if any and use it instead of the default

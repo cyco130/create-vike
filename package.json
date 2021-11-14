@@ -1,6 +1,6 @@
 {
 	"name": "create-vike",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Generates Vike application boilerplate",
 	"main": "dist/index.js",
 	"bin": "create-vike.js",
@@ -9,7 +9,7 @@
 		"build": "node build.mjs",
 		"generate-files": "./generate-files",
 		"test": "run-p 'test:*'",
-		"test:unit": "jest",
+		"test:unit": "jest --passWithNoTests",
 		"test:typecheck": "tsc -p tsconfig.json --noEmit",
 		"test:lint": "eslint src --max-warnings 0",
 		"format": "prettier . --write"
