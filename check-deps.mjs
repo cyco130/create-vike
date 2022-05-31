@@ -1,6 +1,6 @@
 // Run with node --experimental-json-modules check-deps.mjs
 
-import versions from "./src/config-generators/package-versions.json";
+import versions from "./src/config-generators/package-versions.json" assert { type: "json" };
 import { spawn } from "child_process";
 import semver from "semver";
 import chalk from "chalk";
